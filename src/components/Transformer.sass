@@ -15,5 +15,24 @@
             margin: 5px
         > .sub
             > .title
+                width: 100%
+                display: inline-flex
+                justify-content: space-between
+                align-items: baseline
                 font-size: 20px
                 opacity: 0.75
+
+.message-indicator
+    font-size: 12px
+    opacity: 0.9
+    transition: 0.5s color
+    &.bad
+        color: tomato
+        &:after
+            content: " 👎"
+            transition: 0.5s
+
+    &.good
+        color: lightblue
+        &:after
+            content: " 👍"
