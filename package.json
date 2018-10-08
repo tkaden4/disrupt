@@ -4,17 +4,19 @@
   "description": "",
   "scripts": {
     "devel": "parcel index.pug",
-    "build": "rimraf docs && parcel build index.pug -d docs --public-url /disrupt/"
+    "build": "rimraf docs && parcel build index.pug -d docs --public-url /disrupt/ && copyfiles CNAME docs/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "2.2.6",
+    "copy-to-clipboard": "3.0.8",
     "node-sass": "4.9.3",
     "normalize.css": "8.0.0",
     "pug": "2.0.3",
     "react": "16.5.2",
+    "react-copy-to-clipboard": "5.0.1",
     "react-dom": "16.5.2",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
@@ -25,6 +27,7 @@
     "babel-core": "6.26.3",
     "babel-preset-env": "1.7.0",
     "babel-preset-react": "6.24.1",
+    "copyfiles": "2.1.0",
     "parcel-bundler": "1.10.1",
     "rimraf": "2.6.2"
   }
