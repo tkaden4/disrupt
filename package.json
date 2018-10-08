@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "devel": "parcel index.pug",
-    "build": "rimraf docs && parcel build index.pug -d docs --public-url /disrupt/ && copyfiles CNAME docs/"
+    "build": "rimraf docs && parcel build index.pug -d docs --public-url /disrupt/"
   },
   "keywords": [],
   "author": "",
