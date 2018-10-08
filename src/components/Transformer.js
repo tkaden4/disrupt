@@ -57,7 +57,7 @@ export class Transformer extends React.Component {
     render() {
         let { text } = this.state;
         let { name, transformer } = this.props;
-        return <TransformedView name={name} transformer={transformer} content={this.state.text} onChange={this.onChange} />
+        return <TransformedView name={name} transformer={transformer} content={text} onChange={this.onChange} />
     }
 };
 
