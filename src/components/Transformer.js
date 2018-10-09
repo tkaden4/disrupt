@@ -1,18 +1,18 @@
 import React from "react";
 import MessageBox from "./MessageBox";
 import classnames from "classnames";
-
-const MAX_CHARS = 2000;
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import "./Transformer.sass";
 
+const MAX_CHARS = 2000;
 
-const MessageLengthIndicator = ({ length }) =>
+export const MessageLengthIndicator = ({ length }) =>
     <div className={classnames("message-indicator", { "bad": length <= 0, "good": length > 0 })} >
         {length} chars left
     </div>;
 
-export const TransformedView = ({ name, transformer, content, onChange }) => {
+export const TransformedView = ({ name, transformer, content, onChange = (e) => { } }) => {
     let output = transformer(content);
     let out_len = output.length;
     let out_diff = MAX_CHARS - out_len;
@@ -29,7 +29,12 @@ export const TransformedView = ({ name, transformer, content, onChange }) => {
             <div className="sub">
                 <div className="title">
                     Output
-                    <MessageLengthIndicator length={out_diff} />
+                    <div className="info">
+                        <MessageLengthIndicator length={out_diff} />
+                        <CopyToClipboard text={output}>
+                            <a href="#" className="copy-msg">copy</a>
+                        </CopyToClipboard>
+                    </div>
                 </div>
                 <MessageBox content={output} disabled />
             </div>
