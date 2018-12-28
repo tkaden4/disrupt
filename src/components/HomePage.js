@@ -10,14 +10,17 @@ import MessageBox from "./MessageBox";
 import Transformer from "./Transformer";
 
 const samplePhrases = [
-    "hey gais :))",
+    "Hello!",
     "How's it goin?",
     "What's the dealio",
-    "that sucks for you bro",
-    "OwO, what's this?"
+    "*notices bulge* OwO, what's this?"
 ];
 
 const randomPhrase = () => samplePhrases[Math.floor(Math.random() * samplePhrases.length)];
+
+const isWhiteSpace = (text) => text.trim() == '';
+
+const updown = (text) => Array.from(text).map((e, i) => (i % 2 == 0 && !isWhiteSpace(e)) ? e.toUpperCase() : e).join("");
 
 export const HomePage = () =>
     <div className="home-page">
@@ -28,6 +31,7 @@ export const HomePage = () =>
         </div>
         <div className="container">
             <Transformer name="Regional Indicator" defaultContent={"Hello!"} transformer={regionalize} />
+            <Transformer name="Mockcasing " defaultContent={"Stupid and arbitrary"} transformer={updown} />
         </div>
     </div>;
 
