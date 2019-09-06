@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "devel": "parcel index.pug",
+    "dev": "parcel index.pug",
     "build": "rimraf docs && parcel build index.pug -d docs  && copyfiles CNAME docs/"
   },
   "keywords": [],
