@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "2.2.6",
-    "node-sass": "4.9.3",
+    "node-sass": "4.14.1",
     "normalize.css": "8.0.0",
     "pug": "2.0.3",
     "react": "16.5.2",
